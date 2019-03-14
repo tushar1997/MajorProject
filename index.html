@@ -19,12 +19,9 @@
 
 <style>
 .navbar {margin-bottom:0;
-      
          border-radius:0;
-
         }
-
-
+    
 .row.content  
 {height:400px;
 }
@@ -72,17 +69,32 @@
         }
         else{
             alert("Incorrect Credentials");
+            document.getElementById("pass").value="";
+            document.getElementById("user").value="";
+            return false;
             }
     }
     </script>
+    
+ <script>
+     function redirect()
+     {
+         var username=document.getElementById("user");
+                if (sessionStorage.getItem("autosave")) 
+                {
+                     field.value = sessionStorage.getItem("autosave");
+                }
+            }
+        </script>
+    
 </head>
 
 <body>
     <div class="container-fluid text-center col-sm-8">
         <div class="well well-lg">
-            <div class="form-group">
-            <form class="form-horizontal">
-                
+            
+            <form class="form-horizontal" onsubmit="return validate()" action="welcome.html" method="post">
+                    <div class="form-group">
                     <label class="control-label col-sm-5" for="username">Username:</label>
                     <div class="col-sm-4">
                         <input type="username" class="form-control" id="user" placeholder="Enter Username" required>
@@ -101,14 +113,14 @@
                             </div>
                         </div>
                     </div>
-                    </form>
+                    
                     <div class="form-group">
                         <div class="col-sm-offset-4 col-sm-4">
-                            <button onclick="validate()" type="Submit" class="btn btn-success">Submit</button>
+                            <button type="Submit" class="btn btn-success">Submit</button>
                         </div>
                     </div>
                 </div>
-            
+            </form>
         </div>
     </div>
 </body>
