@@ -141,11 +141,35 @@
             var checkBox = document.getElementById("light");
             if (checkBox.checked == true){
                 LightOn();
-                alert("Light On");
+                //alert("Light On");
             }
             else if (checkBox.checked == false){
                 LightOff();
-                alert("Light Off");
+                //alert("Light Off");
+            }
+        }
+        
+        function fan() {
+            var checkBox = document.getElementById("fan");
+            if (checkBox.checked == true){
+                FanOn();
+                //alert("Fan On");
+            }
+            else if (checkBox.checked == false){
+                FanOff();
+                //alert("Fan Off");
+            }
+        }
+        
+        function tv() {
+            var checkBox = document.getElementById("tv");
+            if (checkBox.checked == true){
+                TvOn();
+                //alert("Tv On");
+            }
+            else if (checkBox.checked == false){
+                TvOff();
+                //alert("Tv Off");
             }
         }
     </script>
@@ -225,7 +249,7 @@ input:checked + .slider:before {
         <div class="light">
             <h2>Tube Light &nbsp; &nbsp;
                 <label class="switch">
-                    <input type="checkbox" id="light">
+                    <input type="checkbox" id="light" onclick="light()">
                     <span class="slider round"></span>
                 </label>
             </h2>
@@ -233,7 +257,7 @@ input:checked + .slider:before {
         <div class="fan">
             <h2>Ceiling Fan &nbsp; &nbsp;
                 <label class="switch">
-                    <input type="checkbox" id="fan" onclick="FanOn()">
+                    <input type="checkbox" id="fan" onclick="fan()">
                     <span class="slider round"></span>
                 </label>
             </h2>
@@ -241,7 +265,7 @@ input:checked + .slider:before {
         <div class="tv">
             <h2>Television &nbsp; &nbsp;
                 <label class="switch">
-                    <input type="checkbox" id="tv" onclick="TvOn()">
+                    <input type="checkbox" id="tv" onclick="tv()">
                     <span class="slider round"></span>
                 </label>
             </h2>
