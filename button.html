@@ -16,6 +16,139 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 
 </script>
+    
+    <script>
+    function LightOn(){
+        var message = 'LightOn';
+        $.ajax({
+            url: 'http://localhost:3000/publish',
+            type: 'POST',
+            dataType: 'json',
+            data : {
+                'msg' : message
+            },
+            complete: function(xhr, textStatus){
+                console.log(xhr.status);
+                
+                $("#dat").html(message);
+               
+            //alert("Success!");
+            }
+            
+               })
+        }
+    function LightOff(){
+        var message = 'LightOff';
+        $.ajax({
+            url: 'http://localhost:3000/publish',
+            type: 'POST',
+            dataType: 'json',
+            data : {
+                'msg' : message
+            },
+            complete: function(xhr, textStatus){
+                console.log(xhr.status);
+                
+                $("#dat").html(message);
+               
+            //alert("Success!");
+            }
+            
+               })
+        }
+    
+    function FanOn(){
+        var message = 'FanOn';
+        $.ajax({
+            url: 'http://localhost:3000/publish',
+            type: 'POST',
+            dataType: 'json',
+            data : {
+                'msg' : message
+            },
+            complete: function(xhr, textStatus){
+                console.log(xhr.status);
+                
+                $("#dat").html(message);
+               
+            //alert("Success!");
+            }
+            
+               })
+        }
+    function FanOff(){
+        var message = 'FanOff';
+        $.ajax({
+            url: 'http://localhost:3000/publish',
+            type: 'POST',
+            dataType: 'json',
+            data : {
+                'msg' : message
+            },
+            complete: function(xhr, textStatus){
+                console.log(xhr.status);
+                
+                $("#dat").html(message);
+               
+            //alert("Success!");
+            }
+            
+               })
+        }
+    function TvOn(){
+        var message = 'TvOn';
+        $.ajax({
+            url: 'http://localhost:3000/publish',
+            type: 'POST',
+            dataType: 'json',
+            data : {
+                'msg' : message
+            },
+            complete: function(xhr, textStatus){
+                console.log(xhr.status);
+                
+                $("#dat").html(message);
+               
+            //alert("Success!");
+            }
+            
+               })
+        }
+    function TvOff(){
+        var message = 'TvOff';
+        $.ajax({
+            url: 'http://localhost:3000/publish',
+            type: 'POST',
+            dataType: 'json',
+            data : {
+                'msg' : message
+            },
+            complete: function(xhr, textStatus){
+                console.log(xhr.status);
+                
+                $("#dat").html(message);
+               
+            //alert("Success!");
+            }
+            
+               })
+        }
+    
+</script>
+
+    <script>
+        function light() {
+            var checkBox = document.getElementById("light");
+            if (checkBox.checked == true){
+                LightOn();
+                alert("Light On");
+            }
+            else if (checkBox.checked == false){
+                LightOff();
+                alert("Light Off");
+            }
+        }
+    </script>
 
 <style>
     .switch {
@@ -83,12 +216,16 @@ input:checked + .slider:before {
 
 <body>
     <div class="container-fluid text-center">
-        <h1>Data Received</h1>
+        <h1>
+       <div id ="dat">
+           Data Received
+       </div>
+        </h1>    
         <br><br>
         <div class="light">
             <h2>Tube Light &nbsp; &nbsp;
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" id="light">
                     <span class="slider round"></span>
                 </label>
             </h2>
@@ -96,7 +233,7 @@ input:checked + .slider:before {
         <div class="fan">
             <h2>Ceiling Fan &nbsp; &nbsp;
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" id="fan" onclick="FanOn()">
                     <span class="slider round"></span>
                 </label>
             </h2>
@@ -104,7 +241,7 @@ input:checked + .slider:before {
         <div class="tv">
             <h2>Television &nbsp; &nbsp;
                 <label class="switch">
-                    <input type="checkbox">
+                    <input type="checkbox" id="tv" onclick="TvOn()">
                     <span class="slider round"></span>
                 </label>
             </h2>
